@@ -1,0 +1,103 @@
+*{
+     color: #fff;
+     background: rgba(0, 0, 0, 0.925);
+}
+
+body{
+     width:100%;
+     height: auto;
+     display: flex;
+     flex-direction: center;
+     justify-content: center;
+     padding-top: 20px;
+     align-items: center;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     background: rgba(0, 0, 0, 0.354);
+}
+button{
+     height: 2rem;
+     font-size: 1rem;
+     font-weight: normal;
+     border:0.5px solid rgba(255, 255, 255, 0.24);
+     border-radius: 10px;
+     margin: 3px;
+     border-top: none;
+     cursor:pointer;
+    
+}
+button:hover{
+     transform: scale(1.1);
+}
+button:active{
+     transform: scale(0.5);
+     transition:0.4s linear;
+}
+.contenaire{
+     width: 50vh;
+     justify-content: center;
+     border: 1px solid #fff;
+     padding: 0 10px;
+     border-top: none;
+     border-bottom: none;
+     display: grid;
+     grid-template-columns:1fr 1fr 1fr 1fr;
+     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+     grid-template-areas: 
+     "them them them them"
+     "in in in in"
+     "clear clear modulo division"
+     "sept huit neuf multiplication"
+     "quatre cinq six soustraction"
+     "un deux trois addition"
+     "point zeero egale  egale";
+}
+#resultat {
+     margin: 0;
+     padding: 0;
+     width: 100%;
+     height: 1.2em;
+     border: 1px solid #fff;
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     font-size: 2em;
+     text-align: right;
+     overflow: hidden;
+     margin-bottom: 0;
+     grid-area: in;
+     cursor: not-allowed;
+}
+.zero{grid-area: zeero;}
+.un{grid-area: un;}
+.deux{grid-area: deux;}
+.trois{grid-area: trois;}
+.quatre{grid-area: quatre;}
+.cinq{grid-area: cinq;}
+.six{grid-area: six;}
+.sept{grid-area: sept;}
+.huit{grid-area: huit;}
+.neuf{grid-area: neuf;}
+.egale{grid-area: egale;  color:red;}
+.fois{grid-area: multiplication; color:red;}
+.plus{grid-area: addition ; color:red;}
+.division{grid-area: division; color:red;}
+.moin{grid-area: soustraction; color:red;}
+.modulo{grid-area: modulo; color:red;}
+.point{grid-area: point; color:red;}
+.clear{grid-area: clear; color:red;}
+
+.them{
+     grid-area: them;
+     height: auto;
+     display: flex;
+
+}
+.them .color{
+     width: 15px;
+     height: 15px;
+     background-color: #fff;
+     margin-right: 5px;
+     border-radius: 15px;
+     border: none;
+}
+
