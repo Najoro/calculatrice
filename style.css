@@ -1,103 +1,144 @@
+:root{
+     --bg1:#F7F5F2;
+     --contenaire:#c8c8c3dc;
+     --button:#8d8daa2c;
+     --hover:#F56D91;
+     --operation:#8d8daa7b;
+}
 *{
-     color: #fff;
-     background: rgba(0, 0, 0, 0.925);
-}
-
-body{
-     width:100%;
-     height: auto;
-     display: flex;
-     flex-direction: center;
-     justify-content: center;
-     padding-top: 20px;
-     align-items: center;
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
-     background: rgba(0, 0, 0, 0.354);
-}
-button{
-     height: 2rem;
-     font-size: 1rem;
-     font-weight: normal;
-     border:0.5px solid rgba(255, 255, 255, 0.24);
-     border-radius: 10px;
-     margin: 3px;
-     border-top: none;
-     cursor:pointer;
-    
-}
-button:hover{
-     transform: scale(1.1);
-}
-button:active{
-     transform: scale(0.5);
-     transition:0.4s linear;
-}
-.contenaire{
-     width: 50vh;
-     justify-content: center;
-     border: 1px solid #fff;
-     padding: 0 10px;
-     border-top: none;
-     border-bottom: none;
-     display: grid;
-     grid-template-columns:1fr 1fr 1fr 1fr;
-     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-     grid-template-areas: 
-     "them them them them"
-     "in in in in"
-     "clear clear modulo division"
-     "sept huit neuf multiplication"
-     "quatre cinq six soustraction"
-     "un deux trois addition"
-     "point zeero egale  egale";
-}
-#resultat {
      margin: 0;
      padding: 0;
-     width: 100%;
-     height: 1.2em;
-     border: 1px solid #fff;
-     border-top: none;
-     border-left: none;
-     border-right: none;
-     font-size: 2em;
-     text-align: right;
-     overflow: hidden;
-     margin-bottom: 0;
-     grid-area: in;
-     cursor: not-allowed;
+     text-decoration: none;
+     letter-spacing: 5px;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.zero{grid-area: zeero;}
-.un{grid-area: un;}
-.deux{grid-area: deux;}
-.trois{grid-area: trois;}
-.quatre{grid-area: quatre;}
-.cinq{grid-area: cinq;}
-.six{grid-area: six;}
-.sept{grid-area: sept;}
-.huit{grid-area: huit;}
-.neuf{grid-area: neuf;}
-.egale{grid-area: egale;  color:red;}
-.fois{grid-area: multiplication; color:red;}
-.plus{grid-area: addition ; color:red;}
-.division{grid-area: division; color:red;}
-.moin{grid-area: soustraction; color:red;}
-.modulo{grid-area: modulo; color:red;}
-.point{grid-area: point; color:red;}
-.clear{grid-area: clear; color:red;}
-
-.them{
-     grid-area: them;
-     height: auto;
+body{
+     width: 100vw;
+     height: 100vh;
+     background: var(--bg1);
      display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+}
+.contenaire{
+     width: 20rem;
+     height: 35rem;
+     border-radius: 20px;
+     box-shadow:0px 0px 13px 0px rgba(0, 0, 0, 0.457);
+     background: var(--contenaire);
+     padding: 9px;
+     position: relative;
+}
+h3 {
+     font-weight: normal;
+     color: var(--hover);
+     font-size: 1rem;
+     font-family: monospace;
+     text-align: center;
+     margin: 1rem 0;
+}
+.contenaire-resultat{
+     height: 100px;
+     margin: 10px 0;
+     border-radius: 10px;
+     background: var(--bg1);
+     box-shadow:2px 2px 1px 0px rgba(0, 0, 0, 0.313),
+     inset 2px 2px 0.5px 0px rgba(0, 0, 0, 0.313);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: auto;
+}
+#resultat{
+     width: auto;
+     height: 1.2rem;
+     font-size: 1.2rem;
+     position: relative;
+}
+#resultat::after{
+     content: "";
+     position: absolute;
+     top: 0;
+     right: -1;
+     width: 2px;
+     height:100%;
+     background: #000;
+     animation: anim 0.6s linear infinite;
+}
+@keyframes anim{
+     to{
+          opacity: 0;
+     }
+}
+.contenaire-button{
+     display: grid;
+     /* height: calc(100% - 10rem); */
+     gap: 5px 1rem;
+     justify-content: space-around;
+     grid-template-columns: 30% 30% 30%;
+     grid-template-rows:  45% 45% 45% 45% 45% 45%;
+     grid-template-areas:
+     "b7 b8 b9"     
+     "b4 b5 b6"
+     "b1 b2 b3"
+     "bp b0 bm"
+     "bd bf be"
+     "bC bpo be";
+}
+.b0{grid-area: b0;}
+.b1{grid-area: b1;}
+.b2{grid-area: b2;}
+.b3{grid-area: b3;}
+.b4{grid-area: b4;}
+.b5{grid-area: b5;}
+.b6{grid-area: b6;}
+.b7{grid-area: b7;}
+.b8{grid-area: b8;}
+.b9{grid-area: b9;}
+.bp{grid-area: bp;}
+.bm{grid-area: bm;}
+.bf{grid-area: bf;}
+.bd{grid-area: bd;}
+.be{grid-area: be;}
+/* .bc{grid-area: bc;} */
+.bpo{grid-area: bpo;}
+
+.contenaire-button a{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: var(--button);
+     border-radius: 5px/3px;
+     color: #000;
+     box-shadow:2px 2px 2px 0px rgb(0 0 0 / 36%);
+}
+.contenaire-button a:hover, .operation:hover,.btm a:hover{
+     background: var(--hover) !important;
+     color: #fff;
+     font-weight: bold;
+}
+.operation{
+     background: var(--operation)!important;
 
 }
-.them .color{
-     width: 15px;
-     height: 15px;
-     background-color: #fff;
-     margin-right: 5px;
-     border-radius: 15px;
-     border: none;
+.contenaire-button a:active, .operation:active,.btm a:active{
+     transform: scale(0.9);
 }
-
+.btm{
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     width: 20%;
+}
+.btm a{
+     height: 3rem;
+     background:var(--operation);
+     color: var(--bg1);
+     font-size: 1rem;
+     color: #000;
+     border-radius: 2rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 1rem;
+}
