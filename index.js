@@ -10,9 +10,11 @@ buttons.forEach((button) => {
      })
 })
 egale.addEventListener('click', ()=> {
-     resultat.innerHTML = eval(resultat.textContent)
-     if(resultat.innerHTML == "undefined"){
-          resultat.innerHTML = ''
+     try{
+          resultat.innerHTML = eval(resultat.textContent)
+          if(resultat.innerHTML == "undefined") resultat.innerHTML = ''
+     }catch(e){
+          resultat.innerHTML = "---SINTAX-ERROR---"
      }
 })
 suppression.addEventListener('click', ()=> {
